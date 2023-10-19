@@ -1,0 +1,18 @@
+CorrelationId: 29b30654-be19-4da2-8db8-e825a605eb69
+UTC DateTime: 05/24/2023 13:46:37
+
+The following files/folders have not been downloaded
+0. env/Lib/site-packages/pytz/zoneinfo/Etc/GMT+0
+1. env/Lib/site-packages/pytz/zoneinfo/Etc/GMT+1
+2. env/Lib/site-packages/pytz/zoneinfo/Etc/GMT+10
+3. env/Lib/site-packages/pytz/zoneinfo/Etc/GMT+11
+4. env/Lib/site-packages/pytz/zoneinfo/Etc/GMT+12
+5. env/Lib/site-packages/pytz/zoneinfo/Etc/GMT+2
+6. env/Lib/site-packages/pytz/zoneinfo/Etc/GMT+3
+7. env/Lib/site-packages/pytz/zoneinfo/Etc/GMT+4
+8. env/Lib/site-packages/pytz/zoneinfo/Etc/GMT+5
+9. env/Lib/site-packages/pytz/zoneinfo/Etc/GMT+6
+10. env/Lib/site-packages/pytz/zoneinfo/Etc/GMT+7
+11. env/Lib/site-packages/pytz/zoneinfo/Etc/GMT+8
+12. env/Lib/site-packages/pytz/zoneinfo/Etc/GMT+9
+13. env/Lib/site-packages/pytz/zoneinfo/GMT+0
