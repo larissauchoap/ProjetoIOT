@@ -20,6 +20,8 @@ argumentos.add_argument('sexo', type=str)
 argumentos.add_argument('idade', type=str)
 argumentos.add_argument('telefone',type=str)
 argumentos.add_argument('endereço',type=str)
+argumentos.add_argument('classificacao',type=str)
+argumentos.add_argument('hora_chegada',type=str)
 
 class PacientesCreate(Resource):
     def post(self):
@@ -91,6 +93,8 @@ class PacientesUpdate(Resource):
                 dados_atualizados.add_argument('sexo', type=str)
                 dados_atualizados.add_argument('telefone', type=int)
                 dados_atualizados.add_argument('endereço', type=str)
+                dados_atualizados.add_argument('classificacao', type=str)
+                dados_atualizados.add_argument('hora_chegada', type=str)
 
                 novos_dados = dados_atualizados.parse_args()
 
@@ -105,6 +109,10 @@ class PacientesUpdate(Resource):
                     paciente_a_atualizar.telefone = novos_dados['telefone']
                 if 'endereço' in novos_dados:
                     paciente_a_atualizar.endereço = novos_dados['endereço']
+                if 'classificacao' in novos_dados:
+                    paciente_a_atualizar.endereço = novos_dados['classificacao']
+                if 'hora_chegada' in novos_dados:
+                    paciente_a_atualizar.endereço = novos_dados['hora_chegada']
 
                 # Salve as alterações no banco de dados
                 paciente_a_atualizar.save_paciente()
@@ -137,6 +145,10 @@ class PacientesUpdate(Resource):
                     paciente_a_atualizar.telefone = dados_atualizados['telefone']
                 if dados_atualizados['endereço'] is not None:
                     paciente_a_atualizar.endereço = dados_atualizados['endereço']
+                if dados_atualizados['classificacao'] is not None:
+                    paciente_a_atualizar.endereço = dados_atualizados['classificacao']
+                if dados_atualizados['hora_chegada'] is not None:
+                    paciente_a_atualizar.endereço = dados_atualizados['hora_chegada']
 
                 db.session.commit()  # Salve as alterações no banco de dados
 

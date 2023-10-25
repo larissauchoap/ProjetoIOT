@@ -6,7 +6,7 @@ import sqlite3
 app = Flask(__name__) # cria a instância do flask
 
 # configuração com o banco de dados
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///Cadastro_paciente.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///Cadastro_pacientes_completo.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False # desativando o rastreamento de modificações do SQLAlchemy no app Flask
 
 db = SQLAlchemy(app) # cria a instância do banco de dados
