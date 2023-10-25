@@ -22,6 +22,7 @@ argumentos.add_argument('telefone',type=str)
 argumentos.add_argument('endereço',type=str)
 argumentos.add_argument('classificacao',type=str)
 argumentos.add_argument('hora_chegada',type=str)
+argumentos.add_argument('unidade',type=str)
 
 class PacientesCreate(Resource):
     def post(self):
@@ -95,6 +96,8 @@ class PacientesUpdate(Resource):
                 dados_atualizados.add_argument('endereço', type=str)
                 dados_atualizados.add_argument('classificacao', type=str)
                 dados_atualizados.add_argument('hora_chegada', type=str)
+                dados_atualizados.add_argument('unidade', type=str)
+
 
                 novos_dados = dados_atualizados.parse_args()
 
@@ -110,9 +113,11 @@ class PacientesUpdate(Resource):
                 if 'endereço' in novos_dados:
                     paciente_a_atualizar.endereço = novos_dados['endereço']
                 if 'classificacao' in novos_dados:
-                    paciente_a_atualizar.endereço = novos_dados['classificacao']
+                    paciente_a_atualizar.classificacao = novos_dados['classificacao']
                 if 'hora_chegada' in novos_dados:
-                    paciente_a_atualizar.endereço = novos_dados['hora_chegada']
+                    paciente_a_atualizar.hora_chegada = novos_dados['hora_chegada']
+                if 'unidade' in novos_dados:
+                    paciente_a_atualizar.unidade = novos_dados['unidade']
 
                 # Salve as alterações no banco de dados
                 paciente_a_atualizar.save_paciente()
@@ -146,9 +151,11 @@ class PacientesUpdate(Resource):
                 if dados_atualizados['endereço'] is not None:
                     paciente_a_atualizar.endereço = dados_atualizados['endereço']
                 if dados_atualizados['classificacao'] is not None:
-                    paciente_a_atualizar.endereço = dados_atualizados['classificacao']
+                    paciente_a_atualizar.classificacao = dados_atualizados['classificacao']
                 if dados_atualizados['hora_chegada'] is not None:
-                    paciente_a_atualizar.endereço = dados_atualizados['hora_chegada']
+                    paciente_a_atualizar.hora_chegada = dados_atualizados['hora_chegada']
+                if dados_atualizados['unidade'] is not None:
+                    paciente_a_atualizar.unidade = dados_atualizados['unidade']
 
                 db.session.commit()  # Salve as alterações no banco de dados
 
