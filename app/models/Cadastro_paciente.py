@@ -11,8 +11,10 @@ class paciente(db.Model):
     idade=db.Column(db.String)
     telefone=db.Column(db.Integer)
     endereço=db.Column(db.String(8))
+    classificacao=db.Column(db.String(8))
+    hora_chegada=db.Column(db.String(8))
 
-    def __init__(self, cpf, nome, data_nascimento,sexo,idade,telefone,endereço):
+    def __init__(self, cpf, nome, data_nascimento,sexo,idade,telefone,endereço, classificacao, hora_chegada):
         self.cpf = cpf
         self.nome = nome
         self.data_nascimento =  data_nascimento
@@ -20,6 +22,8 @@ class paciente(db.Model):
         self.idade= idade
         self.telefone=telefone
         self.endereço=endereço
+        self.classificacao=classificacao
+        self.hora_chegada=hora_chegada
        
 
     def json(self):
@@ -31,7 +35,8 @@ class paciente(db.Model):
             'idade':self.idade,
             'telefone':self.telefone,
             'endereço': self.endereço,
-            
+            'classificacao': self.classificacao,    
+            'hora_chegada': self.hora_chegada,            
         }
 
     def save_paciente(self):
